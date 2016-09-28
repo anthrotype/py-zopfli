@@ -25,12 +25,14 @@ class custom_build_ext(build_ext):
 
 setup(
     name='zopfli',
-    version='0.0.7',
+    version='0.0.8',
     author='Adam DePrince',
     author_email='adeprince@nypublicradio.org',
+    maintainer="Cosimo Lupo",
+    maintainer_email="cosimo.lupo@daltonmaag.com",
     description='Zopfli module for python',
     long_description=__doc__,
-    ext_modules = [
+    ext_modules=[
         Extension('zopfli.zopfli',
             sources=[
                 'zopfli/src/zopfli/blocksplitter.c',
@@ -49,17 +51,16 @@ setup(
         )
     ],
     package_dir={"": "src"},
-    packages = ["zopfli"],
-    zip_safe=True,
+    packages=["zopfli"],
+    zip_safe=False,
     license='ASL',
-    include_package_data=True,
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: System :: Archiving :: Compression',
         ],
-    url = "https://github.com/wnyc/py-zopfli",
+    url="https://github.com/anthrotype/py-zopfli",
     test_suite="tests",
     cmdclass={
         "build_ext": custom_build_ext,
